@@ -11,3 +11,13 @@
 - tmux
 ## installed package managers
 - paru
+
+
+
+
+
+
+# TODO
+- waybar
+- tmux conf
+- tmux plugin manager
