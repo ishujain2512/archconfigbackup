@@ -9,6 +9,7 @@
 - alacritty
 - pulseaudio
 - tmux
+- fastfetch
 ## installed package managers
 - paru
 
@@ -18,6 +19,5 @@
 
 
 # TODO
-- waybar
 - tmux conf
 - tmux plugin manager

@@ -1,0 +1,158 @@
+{
+  "layer": "top",
+  "position": "top",
+  "exclusive": true,
+  //"passthrough": false,
+  //"gtk-layer-shell": true,
+  /* === Modules Order === */
+  "modules-left": [
+    "custom/archicon",
+    "custom/filemanager",
+    "clock",
+    "cpu",
+    "memory",
+    "disk",
+    "temperature",
+    "battery"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "wlr/taskbar",
+    "idle_inhibitor",
+    "pulseaudio/slider",
+    "pulseaudio",
+    "network"
+  ],
+  /* === Modules Left === */
+  "custom/archicon": {
+    "format": "",
+    "on-click": "rofi -show drun",
+    "tooltip": false
+  },
+  "custom/filemanager":{
+    "format": "",
+    "on-click": "dolphin",
+    "tooltip": false
+  },
+  "clock": {
+    "timezone": "Asia/Kolkata",
+    "format": "{:%I:%M %p  %a, %d, %m}",
+    "format-alt":"{:%d/%m/%y %H:%M:%S}",
+    "tooltip-format": "{calendar}",
+    "calendar": {
+      "mode": "month",
+      "format":{
+	"today":"<b><u>{}</u></b>"
+      }
+    }
+  },
+  "cpu": {
+    "format": "Usage: {usage}% \nLoad: {load} ",
+    "tooltip": true
+  },
+
+  "memory": {
+    "format": "{}% 󰍛",
+    "tooltip": true,
+    "tooltip-format": "RAM usage: {used} / {total} ({percentage}%)",
+    "on-click": "alacritty -e htop"
+  },
+  "disk": {
+    "format": "{percentage_free}% ",
+    "tooltip": true,
+    "tooltip-format": "Free Space: {free} / {total} ({percentage_free}%)"
+  },
+  "temperature": {
+    "format": "CPU {temperatureC}°C {icon}",
+    "tooltip": true,
+    "tooltip-format": "Actual Temprature: {temperatureC}°C\nCritical > 80°C",
+    "format-icons": [
+      ""
+    ],
+    "hwmon-path":"/sys/devices/pci0000:00/0000:00:02.2/0000:04:00.0/ieee80211/phy0/hwmon5/temp1_input"
+  },
+  "battery": {
+    "bat": "BAT0",
+    "adapter": "ADP0",
+    "interval": 60,
+    "states": {
+        "warning": 30,
+        "critical": 15,
+	"charging":"charging"
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging":"{capacity}% ",    
+    "format-icons": ["", "", "", "", ""]
+},
+  /* === Modules Center === */
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "active": ""
+    },
+    "persistent-workspaces": {
+      "*":6
+    },
+    "all-outputs": true,
+    "show-special": true,
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
+  },
+  /* === Modules Right === */
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "all-outputs": true,
+    "active-first": true,
+    "icon-size":32,
+    "tooltip-format": "{name}",
+    "on-click": "activate",
+    "on-click-right": "close",
+    "ignore-list": [
+      "rofi"
+    ]
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "pulseaudio/slider": {
+    "format": "{volume}%",
+    "format-muted": " MUTE",
+    "step": 5,
+    "tooltip": false
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": "MUTE",
+    "format-icons": {
+      "default": [
+        "",
+        ""
+      ],
+      "default-muted":""
+    },
+    "on-click":"pavucontrol",
+   "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  },
+  "network": {
+    "format-ethernet": "{ifname} 󰈀",
+    "format-wifi": "{ifname} ",
+    "format-disconnected": " ",
+    "tooltip-format": " {ifname} via {gwaddr}",
+    "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+//  },
+//  "hyprland/language": {
+//    "format": "{} ",
+//    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
+//    "format-es": "ESP",
+//    "format-en": "ENG"
+  }
+}
