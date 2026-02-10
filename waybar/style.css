@@ -7,7 +7,8 @@
 }
 
 window#waybar {
- background: rgba(34, 36, 54, 0.6);
+/* background: rgba(34, 36, 54, 0.6);*/
+	background:rgba(255,255,255,0.6);
 
 }
 
@@ -28,6 +29,7 @@ window#waybar.hidden {
 #pulseaudio,
 #pulseaudio-slider,
 #network,
+#tray,
 #language {
   color: #161320;
   margin-top: 6px;
@@ -51,6 +53,7 @@ window#waybar.hidden {
 #clock,
 #custom-filemanager,
 #battery,
+#tray,
 #network {
   margin-right: 5px;
   border-top-right-radius: 10px;
@@ -171,6 +174,10 @@ window#waybar.hidden {
 
 
 #network {
+  background: #CBA6F7;
+  padding-right: 13px;
+}
+#tray {
   background: #CBA6F7;
   padding-right: 13px;
 }

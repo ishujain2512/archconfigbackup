@@ -23,7 +23,8 @@
     "idle_inhibitor",
     "pulseaudio/slider",
     "pulseaudio",
-    "network"
+//    "network"
+    "tray"
   ],
   /* === Modules Left === */
   "custom/archicon": {
@@ -60,7 +61,7 @@
     "on-click": "alacritty -e htop"
   },
   "disk": {
-    "format": "{percentage_free}% ",
+    "format": "{percentage_used}% ",
     "tooltip": true,
     "tooltip-format": "Free Space: {free} / {total} ({percentage_free}%)"
   },
@@ -147,12 +148,21 @@
     "tooltip-format": " {ifname} via {gwaddr}",
     "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
     "tooltip-format-disconnected": "Disconnected",
-    "max-length": 50,
-//  },
+    "max-length": 50
+  },
+"tray": {
+    "icon-size": 21,
+    "spacing": 10,
+    "icons": {
+        "blueman": "bluetooth",
+        "nm-applet": "network-wireless"
+    }
+}
+
 //  "hyprland/language": {
 //    "format": "{} ",
 //    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
 //    "format-es": "ESP",
 //    "format-en": "ENG"
-  }
+//  }
 }
