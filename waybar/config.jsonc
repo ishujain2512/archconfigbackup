@@ -89,13 +89,13 @@
 },
   /* === Modules Center === */
   "hyprland/workspaces": {
-    "format": "{icon}",
+    "format": "{icon} {name}",
     "format-icons": {
       "default": "",
       "active": ""
     },
     "persistent-workspaces": {
-      "*":6
+      "*":[1,2,3,4,5,6]
     },
     "all-outputs": true,
     "show-special": true,
